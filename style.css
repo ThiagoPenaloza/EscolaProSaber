@@ -1,4 +1,4 @@
-@Import url("http://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap");
+@Import url("http://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700;800;900&family=Forum&display=swap");
 
 :root {
     --primary-color: #12c2b9;
@@ -17,6 +17,10 @@
     text-decoration: none;
     text-transform: capitalize;
     transition: all .2s linear;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
 }
 
 html {
@@ -277,16 +281,16 @@ section {
 }
 
 .home .content h3 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: var(--white);
     line-height: 1.2;
 }
 
 
 .home .content p {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     line-height: 2;
-    color: var(--black);
+    color: var(--white);
     padding: 1rem 0;
     text-transform: none;
 }
@@ -299,11 +303,21 @@ section {
 .about .container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 5%;
 }
 
 .about .container .about-image {
-    position: relative;
+    /* position: relative; */
     flex: 1 1 40rem;
+    max-width: 70rem;
+}
+
+.about .container .about-image img {
+    width: 40rem;
+    height: auto;
 }
 
 .about .container .about-image .img1 {
@@ -314,15 +328,28 @@ section {
     position: absolute;
     bottom: -10rem;
     right: -1rem;
-    width: 25rem;
+    width: 40rem;
     padding-block: 5rem;
 }
-
 .about .container .about-content {
-    flex: 1 1 50rem;
-    padding-left: 6rem;
-    padding-top: 8rem;
+    flex: 1 1 40rem;
+    /* padding-left: 6rem;
+    padding-top: 8rem; */
+    max-width: 70rem;
+    padding: 2rem;
+    margin: 5rem;
+}
 
+.about .container .about-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about .container .about-content p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-transform: none;
 }
 
 /* about ends */
@@ -341,10 +368,13 @@ section {
     padding: 3rem 2rem;
     text-align: center;
     border-radius: 10px;
+    max-width: 35rem;
+    margin: 0 auto;
 }
 
 .subjects .box-container .box:hover {
     background: rgb(161, 179, 182, 0.8);
+    cursor: pointer;
 }
 
 .subjects .box-container .box img {
@@ -367,7 +397,11 @@ section {
     font-size: 1.5rem;
     line-height: 2;
     color: #777;
-    height: 20rem;
+    height: auto;
+    max-width: 80%;
+    margin: 0 auto;
+    text-transform: none;
+    height: 250px;
 }
 
 .subjects .box-container .box:hover p {
@@ -375,4 +409,663 @@ section {
 }
 
 
+
 /* subjects ends */
+
+/* blog starts */
+
+.blog {
+    background: rgba(196, 196, 196, 0.4);
+}
+
+.blog .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.blog .box-container .box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    padding-top: 100%;
+}
+
+.blog .box-container .box .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.blog .box-container .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog .box-container .box:hover .image img {
+    transform: scale(1.1);
+}
+
+.blog .box-container .box .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;  
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0), transparent);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.blog .box-container .box .content h3 {
+    font-size: 3rem;
+    margin-bottom: 0;
+    padding: 1rem;
+}
+
+.blog .box-container .box .content p {
+    font-size: 1.4rem;
+}
+
+
+/* blog ends */
+
+/* cardapio e materiais starts */
+
+.heading .pro {
+    color: inital;
+    font-size: 1.2em;
+}
+
+.heading .pro .p {
+    color: #DFB750;
+}
+
+.heading .pro .r {
+    color: #3B9639;
+}
+
+.heading .pro .o {
+    color: #9F282B;
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 6rem;
+}
+
+.card {
+    width: 45%;
+    max-width: 400px;
+    min-width: 300px;
+    aspect-ratio: 1 / 1;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+}
+
+.card:first-child {
+    background-color: #B2D149;
+    border: 3px solid #798D32;
+}
+
+.card:last-child {
+    background-color: #FEC942;
+    border: 3px solid #B48E2E;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.card p {
+    color: black;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    text-transform: none;
+}
+
+.card i {
+    font-size: 10rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.card button {
+    padding: 8% 16%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;
+    font-size: 2rem;
+}
+
+.card:first-child button {
+    background-color: #798D32;
+}
+
+.card:last-child button {
+    background-color: #B48E2E;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+
+/* cardapio e materiais ends */
+
+/* contatos starts */
+
+.contact {
+    background-color: rgba(196, 196, 196, 0.4);
+    padding: 5rem 7%;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background-color: #9A312D;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    border-radius: 10px;
+}
+
+.contact-card h2 {
+    font-size: 3rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 2;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+.contact-form textarea {
+    height: 15rem;
+    resize: vertical;
+}
+
+.contact-form .btn {
+    align-self: flex-start;
+}
+
+
+/* contatos ends */
+
+/* footer starts */
+.footer {
+    color: var(--black);
+    padding: 4rem 7%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.footer-text ul {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.footer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #873030;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li, .footer p {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: #707070;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #505050;
+}
+
+.footer i {
+    margin-right: 0.5rem;
+}
+
+
+/* modal cardapio starts */
+
+#menuModal .modal-content {
+    width: 90%;
+    max-width: 800px;
+}
+
+#menuTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#menuTable th, #menuTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#menuTable th {
+    background-color: #f2f2f2;
+}
+
+
+
+/* modal cardapio ends */
+
+
+
+@media (max-width: 768px) {
+    .footer-column {
+        flex-basis: 100%;
+    }
+}
+
+/* footer ends */
+
+/* modals starts */
+
+.modal {
+    position: fixed;
+    z-index: 1001; /* Increase z-index to be above the header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: flex-start; /* Align to the top */
+    justify-content: center;
+    padding-top: 60px; /* Add padding to account for header height */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0 auto; /* Center horizontally */
+    padding: 2rem;
+    border: 0.1rem solid #888;
+    width: 90%;
+    max-width: 120rem;
+    max-height: calc(100vh - 80px); /* Subtract header height and some extra space */
+    border-radius: 2rem;
+    position: relative;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.3);
+    animation: modalFadeIn 0.3s ease-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#modalContent {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    overflow-y: auto;
+    padding-right: 2rem;
+    flex-grow: 1;
+}
+
+
+.modal-content p {
+    text-transform: none;
+}
+
+.modal-header {
+    padding: 10px;
+    color: white;
+    position: relative;
+    margin: -20px -20px 20px -20px;
+}
+
+.modal-header.one {
+    background-color: #65211E;
+}
+
+.modal-header.two {
+    background-color: #FEC942;
+    color: #B48E2E;
+}
+
+.modal-header.three {
+    background-color: #798D32;
+    color: #B2D149;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalTitle {
+    font-family: 'Forum', serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.modal-highlight {
+    color: inherit;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.modal-subtitle {
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.modal-content.two .modal-highlight {
+    color: #B48E2E;
+}
+
+#materialsModal .modal-content {
+    width: 90%;
+    max-width: 800px;
+}
+
+#gradeButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.grade-btn {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.grade-btn:hover {
+    background-color: var(--secondary);
+    color: var(--primary-color);
+}
+
+#materialsList h3 {
+    margin-top: 20px;
+    color: var(--primary-color);
+}
+
+#materialsList ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .modal {
+        padding-top: 50px; /* Adjust padding for smaller screens */
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: calc(100vh - 70px); /* Adjust for smaller header on mobile */
+    }
+
+    #modalTitle {
+        font-size: 2rem;
+    }
+
+    #modalContent {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+
+    .modal-highlight {
+        font-size: 1.8rem;
+    }
+
+    .modal-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .close {
+        font-size: 2.5rem;
+        top: 5px;
+        right: 10px;
+    }
+}
+
+
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+@keyframes modalFadeOut {
+    from {opacity: 1; transform: scale(1);}
+    to {opacity: 0; transform: scale(0.8);}
+}
+
+
+
+/* modals ends */
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+
+    .about .container .about-image,
+    .about .container .about-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: var(--white);
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+
+    .header .navbar.active {
+        right: 0;
+    }
+
+    .header .navbar a {
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .home .content h3 {
+        font-size: 3rem;
+    }
+
+    .home .content p {
+        font-size: 1.5rem;
+    }
+
+    .about .container {
+        flex-direction: column;
+    }
+
+    .about .second-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about .container .second-content {
+        order: 2;
+    }
+
+    .about .container .second-image {
+        order: 1;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    .close {
+        font-size: 28px;
+    }
+
+    #modalTitle {
+        font-size: 20px;
+    }
+
+    #modalContent {
+        font-size: 14px;
+    }
+}
+
+
+
+/* admin page starts */
+
+.admin-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#menu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#menu-form input,
+#menu-form textarea {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#menu-form button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* admin page ends */
